@@ -4,7 +4,8 @@ class ShoeDetail extends LitElement {
   static get styles() {
     return css`
       /* Estilos base para la categoría y el precio del zapato */
-      .shoe-category, .shoe-price {
+      .shoe-category,
+      .shoe-price {
         color: #ff9f1cff;
       }
       .shoe-category {
@@ -56,6 +57,7 @@ class ShoeDetail extends LitElement {
         flex-direction: column;
         align-items: center;
         gap: 1rem;
+        background-color: #4b3f72ff;
       }
 
       /* Estilos para el nombre de la categoría */
@@ -69,13 +71,19 @@ class ShoeDetail extends LitElement {
 
       /* Estilo para el botón de agregar al carrito */
       .addcart-btn {
-        background-color: #540d6eff;
-        color: #ff9f1cff;
+        background-color: #b59da4ff;
+        color: #4b3f72ff;
         border: none;
         padding: 1rem;
         border-radius: 2rem;
         font-size: 1rem;
         height: 3rem;
+      }
+      .addcart-btn:hover {
+        background-color: #4b3f72ff;
+        color: #b59da4ff;
+        cursor: pointer;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
       }
 
       /* Responsive para tablets y dispositivos con pantalla pequeña */
@@ -115,7 +123,6 @@ class ShoeDetail extends LitElement {
       }
     `;
   }
-
 
   static get properties() {
     return {
@@ -162,7 +169,6 @@ class ShoeDetail extends LitElement {
         // Si el fetch request es el mismo que el que se está ejecutando las propiedades se actualizan
         if (this.currentFetchRequest === fetchRequest) {
           this.shoe = data;
-          console.log(this.shoe);
         }
       })
       // Si el fetch request no es, da un error.
