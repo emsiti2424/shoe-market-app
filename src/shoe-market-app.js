@@ -161,8 +161,6 @@ export class ShoeMarketApp extends router(LitElement) {
 
       .cart-count {
         position: absolute;
-        top: -10%;
-        right: -100%;
         background-color: purple;
         color: white;
         border-radius: 50%;

@@ -116,16 +116,6 @@ class ShoeDetail extends LitElement {
     `;
   }
 
-  /*   onBeforeEnter(location) {
-    console.log("aaaa",location);
-    const { id } = location.params;
-    if (id) {
-      this.routeDataChanged({ id });
-    } else {
-      // Handle scenario where no ID is provided
-      // Maybe navigate to a not-found page or a default page
-    }
-  } */
 
   static get properties() {
     return {
@@ -143,7 +133,7 @@ class ShoeDetail extends LitElement {
     }
   }
   // Constructor method que se ejecuta cuando se crea el componente
-  
+
   constructor() {
     super();
     this.shoe = {};
