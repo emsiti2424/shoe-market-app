@@ -13,6 +13,9 @@ export class ShoeCard extends LitElement {
       transition: box-shadow 0.3s;
       cursor: pointer;
       max-height: 22rem;
+      transition: transform 0.3s ease;
+        transform-style: preserve-3d;
+        will-change: transform;
     }
 
     .card:hover {
@@ -127,6 +130,36 @@ export class ShoeCard extends LitElement {
         composed: true,
       })
     );
+  }
+  // 3d card effect
+
+  firstUpdated() {
+    const card = this.shadowRoot.querySelector('.card');
+
+    card.addEventListener('mousemove', e => {
+      const width = card.offsetWidth;
+      const height = card.offsetHeight;
+      const mouseX = e.offsetX;
+      const mouseY = e.offsetY;
+
+      const centerX = width / 2;
+      const centerY = height / 2;
+
+      const deltaX = mouseX - centerX;
+      const deltaY = mouseY - centerY;
+
+      const percentageX = deltaX / centerX;
+      const percentageY = deltaY / centerY;
+
+      const rotationY = 20 * percentageX;
+      const rotationX = -20 * percentageY;
+
+      card.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'rotateX(0) rotateY(0)';
+    });
   }
 
   _handleKeydown(e) {
