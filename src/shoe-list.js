@@ -98,8 +98,18 @@ export class ShoeList extends navigator(LitElement) {
     this.selectedBrand = event.detail;
     this.requestUpdate();
   }
+  // FilteredShoes se encarga de filtrar los datos de la base de datos
 
-  // este metodo se encarga de cogger los tamaños de los zapatos
+  filterShoes() {
+    return this.shoes.filter(
+      shoe =>
+        (!this.selectedBrand || shoe.brand === this.selectedBrand) &&
+        (!this.selectedCategory || shoe.category === this.selectedCategory) &&
+        (!this.selectedSize ||
+          (Array.isArray(shoe.size) && shoe.size.includes(this.selectedSize)))
+    );
+  }
+  // este metodo se encarga de coger los tamaños de los zapatos que se encuentran en la base de datos
 
   getUniqueSizes() {
     const allSizes = [];
@@ -109,27 +119,29 @@ export class ShoeList extends navigator(LitElement) {
     return [...new Set(allSizes)].sort((a, b) => a - b);
   }
 
-  // este metodo se encarga de cogger los brands de los zapatos
+  // Este metodo se encarga de coger las marcas de los zapatos que se encuentran en la base de datos
 
   getUniqueBrands(shoes) {
     const allBrands = shoes.map(shoe => shoe.brand);
     return [...new Set(allBrands)];
   }
-
-  // este metodo se encarga de cogger las categorias de los zapatos
+  // Este metodo se encarga de coger las categorias de los zapatos que se encuentran en la base de datos
 
   getUniqueCategories(shoes) {
     const allCategories = shoes.map(shoe => shoe.category);
     return [...new Set(allCategories)];
   }
-// este metodo se encarga de coger el evento card-clicked para que se ejecuta una vez y cambiar a detail.
 
-navigateToDetail(e) {
+  // navigateToDetail se encarga de cambiar el componente padre a la pantalla de detalle de un zapato y coge el id del zapato.
+
+  navigateToDetail(e) {
     const shoeId = e.detail.id;
     this.navigate(`/detail/${shoeId}`);
   }
 
   render() {
+    const filteredShoes = this.filterShoes();
+    const shoesToRender = filteredShoes.length > 0 ? filteredShoes : this.shoes;
     return html`
       <div class="container">
         <shoe-filter
