@@ -154,10 +154,6 @@ export class ShoeMarketApp extends router(LitElement) {
         align-items: center;
         flex-direction: column;
       }
-      .cart-icon {
-        position: relative;
-        display: inline-block;
-      }
 
       .cart-count {
         position: absolute;
@@ -166,6 +162,8 @@ export class ShoeMarketApp extends router(LitElement) {
         border-radius: 50%;
         padding: 0.2rem 0.5rem;
         font-size: 0.8rem;
+        margin-top: 2.5rem;
+        z-index: 10;
       }
 
       header {
@@ -346,9 +344,8 @@ export class ShoeMarketApp extends router(LitElement) {
             </button>
           </app-link>
           <app-link href="carrito">
-            <div class="cart-icon">
-              <span class="cart-count">${this.cartCount}</span>
-            </div>
+            <span class=" badge-primary cart-count">${this.cartCount}</span>
+
             <button class="navigation-button">
               <svg
                 id="car-icon"
