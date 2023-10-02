@@ -425,7 +425,7 @@ export class ShoeMarketApp extends router(LitElement) {
         </div>
         <div route="not-found">Not Found</div>
       </app-main>
-      <footer class="footer">Quiero ser Softtekero</footer>
+      <footer class="footer">Quiero ser Softtekian</footer>
     `;
   }
 }
