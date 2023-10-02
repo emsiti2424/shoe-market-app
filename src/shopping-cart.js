@@ -96,11 +96,11 @@ export class ShoppingCart extends LitElement {
     }
 
     .card img {
-        width: 8rem;  /* Resize image for mobile screens */
+        width: 8rem;
     }
 
     .remove-btn {
-        width: 50%;  /* Adjust button width for smaller screens */
+        width: 50%;
     }
 }
 
@@ -122,8 +122,8 @@ export class ShoppingCart extends LitElement {
   removeFromCart(productToRemove) {
     this.dispatchEvent(new CustomEvent('remove-from-cart', {
         detail: productToRemove,
-        bubbles: true, // Para que el evento atraviese el shadow DOM si es necesario
-        composed: true // Para que el evento atraviese los límites entre shadow DOM y el DOM regular
+        bubbles: true,
+        composed: true
     }));
 }
 
