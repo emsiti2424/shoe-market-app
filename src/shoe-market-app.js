@@ -165,7 +165,7 @@ export class ShoeMarketApp extends router(LitElement) {
         border-radius: 50%;
         padding: 0.2rem 0.5rem;
         font-size: 0.8rem;
-        margin-top: 2.5rem;
+        margin-top: 1.7rem;
         z-index: 10;
       }
 
