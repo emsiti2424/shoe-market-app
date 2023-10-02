@@ -24,6 +24,7 @@ export class ShoeCard extends LitElement {
       align-items: center;
       flex-direction: column;
       position: relative;
+
     }
     .new-label {
       position: absolute;
@@ -34,6 +35,8 @@ export class ShoeCard extends LitElement {
       padding: 5px 10px;
       border-radius: 3px;
       font-weight: bold;
+      box-shadow: 2px 2px 5px hsla(35, 100%, 55%, 1);
+      border-radius: 5px;
     }
 
     .card-details {
@@ -42,10 +45,12 @@ export class ShoeCard extends LitElement {
       align-items: center;
       justify-content: space-around;
       gap: 1rem;
+
     }
 
     .shoe-img {
       width: 15rem;
+
     }
     .shoe-price {
       font-size: 1.5rem;

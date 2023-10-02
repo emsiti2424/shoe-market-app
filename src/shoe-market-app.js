@@ -143,11 +143,13 @@ export class ShoeMarketApp extends router(LitElement) {
       }
       .title-img {
         border-radius: 70%;
-        border: 1px solid #ff9f1cff;
+        border: 3px solid #ff9f1cff;
+        box-shadow: 0 0 15px rgba(255, 159, 28, 0.6);
         width: 10rem;
         height: 10rem;
         margin-bottom: 0;
       }
+
       .header-center {
         display: flex;
         justify-content: center;
