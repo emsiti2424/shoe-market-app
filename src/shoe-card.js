@@ -23,6 +23,17 @@ export class ShoeCard extends LitElement {
       display: flex;
       align-items: center;
       flex-direction: column;
+      position: relative;
+    }
+    .new-label {
+      position: absolute;
+      top: -1rem;
+      right: 12.5rem;
+      background-color: #540d6eff;
+      color: #ff9f1cff;
+      padding: 5px 10px;
+      border-radius: 3px;
+      font-weight: bold;
     }
 
     .card-details {
@@ -32,6 +43,7 @@ export class ShoeCard extends LitElement {
       justify-content: space-around;
       gap: 1rem;
     }
+
     .shoe-img {
       width: 15rem;
     }
@@ -40,30 +52,33 @@ export class ShoeCard extends LitElement {
       color: #4b3f72ff;
     }
     /* Responsive styles for tablets and smaller screens */
-  @media (max-width: 768px) {
-    .shoe-img {
-      width: 12rem;
+    @media (max-width: 768px) {
+      .shoe-img {
+        width: 12rem;
+      }
+      .shoe-price {
+        font-size: 1.2rem;
+      }
+      .card {
+        padding: 10px;
+      }
+      .new-label{
+        top: -0.5rem;
+      right: 14.2rem;
     }
-    .shoe-price {
-      font-size: 1.2rem;
-    }
-    .card {
-      padding: 10px;
-    }
-  }
 
-  /* Responsive styles for very small devices */
-  @media (max-width: 576px) {
-    .shoe-img {
-      width: 9rem;
+    /* Responsive styles for very small devices */
+    @media (max-width: 576px) {
+      .shoe-img {
+        width: 9rem;
+      }
+      .shoe-price {
+        font-size: 1rem;
+      }
+      .card {
+        padding: 5px;
+      }
     }
-    .shoe-price {
-      font-size: 1rem;
-    }
-    .card {
-      padding: 5px;
-    }
-  }
   `;
 
   static get properties() {
@@ -82,6 +97,9 @@ export class ShoeCard extends LitElement {
         @keydown="${this._handleKeydown}"
       >
         <div class="card-content">
+          ${this.shoe.season === 'new'
+            ? html`<span class="new-label">New</span>`
+            : null}
           <img
             class="shoe-img"
             src="${this.shoe.image}"
