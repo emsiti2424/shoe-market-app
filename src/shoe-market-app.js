@@ -7,6 +7,8 @@ import { router } from 'lit-element-router';
 import './app-link.js';
 import './app-main.js';
 
+
+
 export class ShoeMarketApp extends router(LitElement) {
   static get styles() {
     return css`
@@ -86,19 +88,19 @@ export class ShoeMarketApp extends router(LitElement) {
       }
 
       nav button:nth-child(1):before {
-        background-color: yellow;
+        background-color: #540d6eff;
       }
 
       nav button:nth-child(1):after {
-        background-color: red;
+        background-color: #540d6eff;
       }
 
       nav button:nth-child(2):before {
-        background-color: #00e2ff;
+        background-color: #4b3f72ff;
       }
 
       nav button:nth-child(2):after {
-        background-color: #89ff00;
+        background-color: #4b3f72ff;
       }
 
       nav button:nth-child(3):before {
@@ -110,7 +112,7 @@ export class ShoeMarketApp extends router(LitElement) {
       }
 
       nav button:hover {
-        color: #fff;
+        color: #4b3f72ff;
       }
 
       nav button:hover:before,
@@ -124,12 +126,12 @@ export class ShoeMarketApp extends router(LitElement) {
 
       nav button:nth-child(2):hover ~ #indicator {
         left: 34%;
-        background: linear-gradient(130deg, #00e2ff, #89ff00);
+        background: linear-gradient(130deg, #4b3f72ff, #4b3f72ff);
       }
 
       nav button:nth-child(3):hover ~ #indicator {
         left: 70%;
-        background: linear-gradient(130deg, purple, palevioletred);
+        background: linear-gradient(130deg, #4b3f72ff, #4b3f72ff);
       }
       #home-icon {
         width: 3rem;
@@ -226,6 +228,9 @@ export class ShoeMarketApp extends router(LitElement) {
           height: 8rem;
         }
       }
+
+
+
     `;
   }
 
@@ -296,18 +301,21 @@ export class ShoeMarketApp extends router(LitElement) {
       this.cart = updatedCart;
     }
 
-    console.log('this.cart', this.cart);
+
   }
 
   router(route, params, query, data) {
     this.route = route;
     this.params = params;
     this.query = query;
-    console.log('aqui', route, params, query, data);
+
   }
+
+
 
   render() {
     return html`
+    <div id="particles-js"></div>
       <header>
         <div class="header-center">
           <img class="title-img" src="../assets//header-img.jpg" alt="Logo" />
