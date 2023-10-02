@@ -52,7 +52,6 @@ export class ShoeMarketApp extends router(LitElement) {
 
       nav button {
         position: relative;
-        width: 70%;
         display: table-cell;
         text-align: center;
         color: #949494;
