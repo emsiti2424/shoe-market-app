@@ -1,7 +1,6 @@
 import { LitElement, html, css } from 'lit-element';
 import { navigator } from 'lit-element-router';
 import './shoe-filter.js';
-
 import './shoe-card.js';
 
 export class ShoeList extends navigator(LitElement) {
@@ -65,43 +64,42 @@ export class ShoeList extends navigator(LitElement) {
     this.selectedSize = null;
   }
 
+  // El fetch se encarga de llamar al servidor para obtener los datos de la base de datos
   async fetchContacts() {
+    // Este fetch se encarga de llamar al servidor para obtener los datos de la base de datos
     const response = await fetch(
       'https://my-json-server.typicode.com/claumartinezh/training-db/shoes'
     );
+    // Se obtiene el resultado de la peticion al servidor y se guarda en la variable data
     const data = await response.json();
     this.shoes = data;
-    console.log(this.shoes);
   }
+  // este metodo se encarga de llamar al metodo fetchContacts para obtener los datos de la base de datos, se ejecuta una vez.
 
   firstUpdated() {
     this.fetchContacts();
   }
+  // este metodo se enccrga de coger el evento category-changed para que el componente padre sepa que se ha cambiado la categoria
 
   handleCategoryChanged(event) {
     this.selectedCategory = event.detail;
     this.requestUpdate();
   }
+  // este metodo se encarga de coger el evento size-changed para que el componente padre sepa que se ha cambiado el tamaño
 
   handleSizeChanged(event) {
     this.selectedSize = event.detail;
     this.requestUpdate();
   }
 
+  // este metodo se encarga de coger el evento brand-changed para que el componente padre sepa que se ha cambiado la marca
+
   handleBrandChanged(event) {
     this.selectedBrand = event.detail;
     this.requestUpdate();
   }
 
-  filterShoes() {
-    return this.shoes.filter(
-      shoe =>
-        (!this.selectedBrand || shoe.brand === this.selectedBrand) &&
-        (!this.selectedCategory || shoe.category === this.selectedCategory) &&
-        (!this.selectedSize ||
-          (Array.isArray(shoe.size) && shoe.size.includes(this.selectedSize)))
-    );
-  }
+  // este metodo se encarga de cogger los tamaños de los zapatos
 
   getUniqueSizes() {
     const allSizes = [];
@@ -111,24 +109,27 @@ export class ShoeList extends navigator(LitElement) {
     return [...new Set(allSizes)].sort((a, b) => a - b);
   }
 
+  // este metodo se encarga de cogger los brands de los zapatos
+
   getUniqueBrands(shoes) {
     const allBrands = shoes.map(shoe => shoe.brand);
     return [...new Set(allBrands)];
   }
 
+  // este metodo se encarga de cogger las categorias de los zapatos
+
   getUniqueCategories(shoes) {
     const allCategories = shoes.map(shoe => shoe.category);
     return [...new Set(allCategories)];
   }
+// este metodo se encarga de coger el evento card-clicked para que se ejecuta una vez y cambiar a detail.
 
-  navigateToDetail(e) {
+navigateToDetail(e) {
     const shoeId = e.detail.id;
     this.navigate(`/detail/${shoeId}`);
   }
 
   render() {
-    const filteredShoes = this.filterShoes();
-    const shoesToRender = filteredShoes.length > 0 ? filteredShoes : this.shoes;
     return html`
       <div class="container">
         <shoe-filter

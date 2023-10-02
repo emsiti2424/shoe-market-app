@@ -69,6 +69,7 @@ export class ShoeFilter extends LitElement {
     this.uniqueCategories = [];
   }
   // Este metodo se encarga de cuando se hace click en un boton de filtrado de la lista de zapatos
+
   handleCategoryClick(category) {
     // Este condicion verifica si el boton seleccionado es el mismo que el actualmente seleccionado
     if (this.selectedCategory === category) {
@@ -87,13 +88,18 @@ export class ShoeFilter extends LitElement {
       })
     );
   }
+  // Este metodo se encarga de cuando se hace click en un boton de filtrado del tamaño de la lista de zapatos
 
   handleSizeClick(size) {
+    // Este condicion verifica si el boton seleccionado es el mismo que el actualmente
     if (this.selectedSize === size) {
+      // Si es el mismo, entonces se deselecciona
       this.selectedSize = null;
     } else {
+      // Si no es el mismo, entonces se selecciona
       this.selectedSize = size;
     }
+    // se envia el evento size-changed para que el componente padre sepa que se ha cambiado el tamaño
     this.dispatchEvent(
       new CustomEvent('size-changed', {
         detail: this.selectedSize,
@@ -102,13 +108,18 @@ export class ShoeFilter extends LitElement {
       })
     );
   }
+  // Este metodo se encarga de cuando se hace click en un boton del filtro de marcas de la lista de zapatos
 
   handleBrandClick(brand) {
+    // Este condicion verifica si el boton seleccionado es el mismo que el actualmente seleccionado
     if (this.selectedBrand === brand) {
+      // Si es el mismo, entonces se deselecciona
       this.selectedBrand = null;
     } else {
+      // Si no es el mismo, entonces se selecciona
       this.selectedBrand = brand;
     }
+    // se envia el evento brand-changed para que el componente padre sepa que se ha cambiado la marca
     this.dispatchEvent(
       new CustomEvent('brand-changed', {
         detail: this.selectedBrand,
