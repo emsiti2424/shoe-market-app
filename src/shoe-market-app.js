@@ -161,8 +161,8 @@ export class ShoeMarketApp extends router(LitElement) {
 
       .cart-count {
         position: absolute;
-        background-color: purple;
-        color: white;
+        background-color: #540d6eff;
+        color: #b59da4ff;
         border-radius: 50%;
         padding: 0.2rem 0.5rem;
         font-size: 0.8rem;
