@@ -28,6 +28,20 @@ export class OrderSummary extends LitElement {
       align-items: center;
       padding: 0.5rem;
     }
+    .finish-order  {
+      background-color: #ff6f47ff;
+      border: none;
+      color: #fff;
+      padding: 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 1rem;
+      width: 100%;
+      cursor: pointer;
+    }
+  .finish-order:hover {
+      background-color: #ff6f4700;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
     @media (max-width: 768px) {
       .order-summary {
         width: 100%;
@@ -65,6 +79,7 @@ export class OrderSummary extends LitElement {
         <div class="flex-row">
           <strong>Total:</strong> <strong>$${this.total.toFixed(2)}</strong>
         </div>
+        <button class="finish-order">Buy it</button>
       </div>
     `;
   }

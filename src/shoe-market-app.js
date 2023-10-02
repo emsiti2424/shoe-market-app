@@ -7,8 +7,6 @@ import { router } from 'lit-element-router';
 import './app-link.js';
 import './app-main.js';
 
-
-
 export class ShoeMarketApp extends router(LitElement) {
   static get styles() {
     return css`
@@ -227,9 +225,6 @@ export class ShoeMarketApp extends router(LitElement) {
           height: 8rem;
         }
       }
-
-
-
     `;
   }
 
@@ -299,22 +294,17 @@ export class ShoeMarketApp extends router(LitElement) {
       updatedCart.splice(productIndex, 1);
       this.cart = updatedCart;
     }
-
-
   }
 
   router(route, params, query, data) {
     this.route = route;
     this.params = params;
     this.query = query;
-
   }
-
-
 
   render() {
     return html`
-    <div id="particles-js"></div>
+      <div id="particles-js"></div>
       <header>
         <div class="header-center">
           <img class="title-img" src="../assets//header-img.jpg" alt="Logo" />
@@ -433,9 +423,7 @@ export class ShoeMarketApp extends router(LitElement) {
         </div>
         <div route="not-found">Not Found</div>
       </app-main>
-      <footer class="footer">
-      Quiero ser Softtekero
-    </footer>
+      <footer class="footer">Quiero ser Softtekero</footer>
     `;
   }
 }
