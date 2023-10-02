@@ -147,6 +147,9 @@ export class ShoeMarketApp extends router(LitElement) {
         width: 10rem;
         height: 10rem;
         margin-bottom: 0;
+        transition: transform 0.3s ease;
+        transform-style: preserve-3d;
+        will-change: transform;
       }
 
       .header-center {
@@ -304,7 +307,6 @@ export class ShoeMarketApp extends router(LitElement) {
 
   render() {
     return html`
-      <div id="particles-js"></div>
       <header>
         <div class="header-center">
           <img class="title-img" src="../assets//header-img.jpg" alt="Logo" />
