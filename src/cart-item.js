@@ -6,11 +6,16 @@ export class CartItem extends LitElement {
       display: flex;
       gap: 6rem;
       padding: 1rem;
-      border: 1px solid #ccc;
+      border: 1px dashed #9f158f;
       margin-bottom: 1rem;
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
       transition: box-shadow 0.3s;
-      background-color: #69ddffff;
+      background: linear-gradient(to bottom right, #69ddffff, #a1d4ffff);
+    }
+
+    .card:hover {
+      box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
+      transform: translateY(-2px);
     }
     .card:hover {
       box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);

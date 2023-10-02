@@ -10,7 +10,7 @@ export class ShoppingCart extends LitElement {
       :host {
         display: flex;
         justify-content: space-around;
-        padding: 1rem;
+        padding: 2rem;
       }
 
       @media (max-width: 768px) {

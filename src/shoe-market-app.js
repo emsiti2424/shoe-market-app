@@ -187,6 +187,17 @@ export class ShoeMarketApp extends router(LitElement) {
         box-shadow: 0 0 10px rgba(255, 159, 28, 1);
         border-bottom: 2px solid transparent;
       }
+      .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 5%;
+      }
+
       /* Media Queries for Responsiveness */
       @media only screen and (max-width: 600px) {
         .header-title {
@@ -415,6 +426,9 @@ export class ShoeMarketApp extends router(LitElement) {
         </div>
         <div route="not-found">Not Found</div>
       </app-main>
+      <footer class="footer">
+      Quiero ser Softtekero
+    </footer>
     `;
   }
 }

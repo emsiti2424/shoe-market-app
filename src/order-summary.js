@@ -9,7 +9,6 @@ export class OrderSummary extends LitElement {
       border: 1px solid #ccc;
       padding: 16px;
       margin-right: auto;
-      margin-top: 5.7%;
       margin-left: 2%;
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
       transition: box-shadow 0.3s;
