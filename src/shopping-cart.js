@@ -11,6 +11,7 @@ export class ShoppingCart extends LitElement {
         display: flex;
         justify-content: space-around;
         padding: 2rem;
+        margin-bottom: 2.5rem;
       }
 
       @media (max-width: 768px) {
