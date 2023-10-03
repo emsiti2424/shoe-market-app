@@ -9,7 +9,7 @@ export class Main extends outlet(LitElement) {
   }
 
   outlet() {
-    // Se ha sobreescrito el método outlet de lit-element-router para solucinar el error de la consola poniendo una cundicion de verificar si existe el shadowRoot
+    // Se ha sobreescrito el método outlet de lit-element-router para solucinar el error de la consola poniendo una condicion de verificar si existe el shadowRoot
     try {
         Array.from(this.querySelectorAll(`[route]`)).map((active) => {
             active.style.display = "none";
