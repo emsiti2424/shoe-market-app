@@ -29,10 +29,13 @@ export class ShoeMarketApp extends router(LitElement) {
       }
       .header-title {
         color: #540d6eff;
-        text-shadow: 1px 1px 1px rgba(255, 159, 28, 1);
+        text-shadow: 1px 1px 1px hsla(254, 29%, 35%, 1);
         font-size: 2rem;
         font-weight: 1200;
         font-family: 'Young Serif', serif;
+        -webkit-text-stroke: 0.5px #ff9f1cff;
+
+
       }
 
       nav {

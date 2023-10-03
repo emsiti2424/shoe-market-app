@@ -2,7 +2,7 @@
 --pale-azure: #69ddffff;
 --rose-quartz: #b59da4ff;
 --indigo: #540d6eff;
---orange-peel: #ff9f1cff;
+--orange-peel:#ff9f1cff ;
 --english-violet: #4b3f72ff;
 
 /* CSS HSL */
