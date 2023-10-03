@@ -2,27 +2,26 @@ import { LitElement, html, css } from 'lit-element';
 
 export class OrderSummary extends LitElement {
   static styles = css`
-  :host{
-    margin-top: 5.7%;
-  }
+    :host {
+      margin-top: 5.7%;
+    }
     .order-summary {
-
       padding: 16px;
       margin-right: auto;
       margin-left: 2%;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-      transition: box-shadow 0.3s;
-      background-color: #4b3f72ff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.45);
+      box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(15px);
       font-family: 'Merriweather', serif;
-      color:#69ddffff;
+      color: #69ddffff;
     }
-    .order-summary:hover {
-      box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
-    }
+
     .order-details {
       border-bottom: 1px solid #ccc;
       margin-bottom: 1rem;
-      color: #949494;
+      color: #ff9f1cff;
     }
     .flex-row {
       display: flex;
@@ -30,30 +29,30 @@ export class OrderSummary extends LitElement {
       align-items: center;
       padding: 0.5rem;
     }
-    .finish-order  {
+    .finish-order {
       background-color: #b59da4ff;
-        color: #4b3f72ff;
-        border: none;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        font-size: 1rem;
-        height: 3rem;
-        transition: all 0.2s ease-in-out;
-        font-family: 'Martian Mono', monospace;
+      color: #4b3f72ff;
+      border: none;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      height: 3rem;
+      transition: all 0.2s ease-in-out;
+      font-family: 'Martian Mono', monospace;
     }
     .finish-order:hover {
-        background-color: #540d6eff;
-        color: #b59da4ff;
-        cursor: pointer;
-        box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
-        border: none;
-      }
-      .finish-order:active {
-        background-color: #540d6eff;
-        color: #b59da4ff;
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-        transform: translateY(2px);
-      }
+      background-color: #540d6eff;
+      color: #b59da4ff;
+      cursor: pointer;
+      box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+      border: none;
+    }
+    .finish-order:active {
+      background-color: #540d6eff;
+      color: #b59da4ff;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      transform: translateY(2px);
+    }
     @media (max-width: 768px) {
       .order-summary {
         width: 100%;

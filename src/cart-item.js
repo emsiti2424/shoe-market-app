@@ -9,7 +9,11 @@ export class CartItem extends LitElement {
       margin-bottom: 1rem;
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
       transition: box-shadow 0.3s;
-      background-color: #4b3f72ff;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.45);
+      box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+
+      backdrop-filter: blur(15px);
       color:#69ddffff;
     }
 
