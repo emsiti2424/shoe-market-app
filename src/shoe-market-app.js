@@ -284,9 +284,16 @@ export class ShoeMarketApp extends router(LitElement) {
     const productToRemove = e.detail;
     console.log('productToRemove', productToRemove);
 
+    if (!productToRemove || !productToRemove.shoe) {
+        console.error("Invalid productToRemove format:", e);
+        return;
+    }
+
     // Encuentra el índice del producto que coincide con el ID y la talla
     const productIndex = this.cart.findIndex(
       product =>
+        product &&
+        product.shoe &&
         product.shoe.id === productToRemove.shoe.id &&
         product.size === productToRemove.size
     );
@@ -297,7 +304,10 @@ export class ShoeMarketApp extends router(LitElement) {
       updatedCart.splice(productIndex, 1);
       this.cart = updatedCart;
     }
-  }
+}
+
+
+
 
   router(route, params, query, data) {
     this.route = route;

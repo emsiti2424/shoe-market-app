@@ -71,6 +71,16 @@ export class CartItem extends LitElement {
     };
   }
 
+  removeFromCart() {
+    this.dispatchEvent(
+      new CustomEvent('remove-from-cart', {
+        detail: this.product,
+        bubbles: true,
+        composed: true,
+      })
+    );
+  }
+
   render() {
     return html`
       <div class="card">
@@ -84,17 +94,7 @@ export class CartItem extends LitElement {
             <span>Price:</span>
             <strong class="shoe-price">$${this.product.shoe.price}</strong>
           </div>
-          <button
-            class="remove-btn"
-            @click="${() =>
-              this.dispatchEvent(
-                new CustomEvent('remove-from-cart', {
-                  detail: this.product,
-                  bubbles: true,
-                  composed: true,
-                })
-              )}"
-          >
+          <button class="remove-btn" @click="${this.removeFromCart}">
             Remove
           </button>
         </div>

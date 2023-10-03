@@ -18,7 +18,6 @@ export class ShoppingCart extends LitElement {
           flex-direction: column;
           align-items: center;
         }
-
       }
     `,
   ];
@@ -34,7 +33,7 @@ export class ShoppingCart extends LitElement {
     this.cart = [];
   }
 
-  removeFromCart(productToRemove) {
+  /*   removeFromCart(productToRemove) {
     this.dispatchEvent(
       new CustomEvent('remove-from-cart', {
         detail: productToRemove,
@@ -42,7 +41,7 @@ export class ShoppingCart extends LitElement {
         composed: true,
       })
     );
-  }
+  } */
 
   render() {
     const subtotal = this.cart.reduce(
@@ -59,11 +58,7 @@ export class ShoppingCart extends LitElement {
               Your cart is empty. Start shopping to add items to your cart!
             </p>`
           : this.cart.map(
-              product =>
-                html`<cart-item
-                  .product="${product}"
-                  @remove-from-cart="${this.removeFromCart}"
-                ></cart-item>`
+              product => html`<cart-item .product="${product}"></cart-item>`
             )}
       </div>
       <order-summary
