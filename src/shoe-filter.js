@@ -2,7 +2,6 @@ import { LitElement, html, css } from 'lit-element';
 
 export class ShoeFilter extends LitElement {
   static styles = css`
-  
     .filter-section {
       flex-basis: 25%;
       padding: 20px;
@@ -22,6 +21,8 @@ export class ShoeFilter extends LitElement {
       margin: 0.2rem;
       background-color: transparent;
       border: none;
+      color: #540d6eff;
+
     }
     li {
       list-style: none;
@@ -33,9 +34,12 @@ export class ShoeFilter extends LitElement {
     .selected {
       font-weight: bold;
       cursor: pointer;
-      color: blue;
-
+      color: #69ddffff;
       border-radius: 0.5rem;
+
+      transition: all 0.7 ease-in-out;
+      max-width: 50%;
+      padding: 0.5rem;
     }
     @media only screen and (max-width: 700px) {
       .container {
