@@ -145,8 +145,7 @@ export class ShoeMarketApp extends router(LitElement) {
       }
       .title-img {
         border-radius: 50%;
-        border: 0.5px solid #ff9f1cff;
-        box-shadow: 0 0 40px rgba(255, 159, 28, 0.6);
+        box-shadow: 0 0 60px rgba(255, 159, 28, 0.6);
         width: 10rem;
         height: 10rem;
         margin-bottom: 0;
