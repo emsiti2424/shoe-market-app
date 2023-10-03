@@ -1,3 +1,4 @@
+
 import { LitElement, html, css } from "lit-element";
 import { navigator } from "lit-element-router";
 
@@ -29,7 +30,7 @@ export class Link extends navigator(LitElement) {
       </a>
     `;
   }
-  
+
   linkClick(event) {
     event.preventDefault();
     this.navigate(this.href);

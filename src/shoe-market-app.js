@@ -152,8 +152,6 @@ export class ShoeMarketApp extends router(LitElement) {
         transform-origin: center center;
       }
 
-   
-
       @keyframes rotate {
         0% {
           transform: rotateZ(0deg);
@@ -171,7 +169,6 @@ export class ShoeMarketApp extends router(LitElement) {
         color: #4b3f72ff;
         text-shadow: 2px 2px #ff9f1cff;
       }
-
 
       .header-center {
         display: flex;
@@ -193,7 +190,6 @@ export class ShoeMarketApp extends router(LitElement) {
 
       header {
         /*  background-image: url('../assets/background-header.jpg'); */
-        background: rgb(181, 157, 164);
         background: linear-gradient(
           117deg,
           rgba(181, 157, 164, 1) 0%,
