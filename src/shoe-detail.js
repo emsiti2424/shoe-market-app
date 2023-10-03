@@ -31,13 +31,13 @@ class ShoeDetail extends LitElement {
 
       .shoe-size-selector:hover {
         cursor: pointer;
-        background-color: #4b3f72ff;
+        background-color: #540d6eff;
         color: #b59da4ff;
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
       }
 
       .shoe-size-selector:focus {
-        background-color: #4b3f72ff;
+        background-color: #540d6eff;
         color: #b59da4ff;
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         border: none;
@@ -99,13 +99,22 @@ class ShoeDetail extends LitElement {
         border-radius: 2rem;
         font-size: 1rem;
         height: 3rem;
+        transition: all 0.2s ease-in-out;
       }
       .addcart-btn:hover {
-        background-color: #4b3f72ff;
+        background-color: #540d6eff;
         color: #b59da4ff;
         cursor: pointer;
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+        border: none;
       }
+      .addcart-btn:active {
+        background-color: #540d6eff;
+        color: #b59da4ff;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        transform: translateY(2px);
+      }
+
 
       /* Responsive para tablets y dispositivos con pantalla pequeña */
       @media (max-width: 768px) {
