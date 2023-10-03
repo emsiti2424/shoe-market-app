@@ -36,9 +36,8 @@ export class ShoeCard extends LitElement {
       background-color: #540d6eff;
       color: #ff9f1cff;
       padding: 5px 10px;
-      border-radius: 3px;
       font-weight: bold;
-      box-shadow: 2px 2px 5px hsla(35, 100%, 55%, 1);
+      box-shadow: 1px 1px 1px hsla(35, 100%, 55%, 1);
       border-radius: 5px;
     }
 
