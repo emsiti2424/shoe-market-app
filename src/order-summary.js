@@ -6,13 +6,15 @@ export class OrderSummary extends LitElement {
     margin-top: 5.7%;
   }
     .order-summary {
-      border: 1px solid #ccc;
+
       padding: 16px;
       margin-right: auto;
       margin-left: 2%;
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
       transition: box-shadow 0.3s;
-      background-color: #69ddffff;
+      background-color: #4b3f72ff;
+      font-family: 'Merriweather', serif;
+      color:#69ddffff;
     }
     .order-summary:hover {
       box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
@@ -29,19 +31,29 @@ export class OrderSummary extends LitElement {
       padding: 0.5rem;
     }
     .finish-order  {
-      background-color: #ff6f47ff;
-      border: none;
-      color: #fff;
-      padding: 0.5rem;
-      border-radius: 0.25rem;
-      font-size: 1rem;
-      width: 100%;
-      cursor: pointer;
+      background-color: #b59da4ff;
+        color: #4b3f72ff;
+        border: none;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        height: 3rem;
+        transition: all 0.2s ease-in-out;
+        font-family: 'Martian Mono', monospace;
     }
-  .finish-order:hover {
-      background-color: #ff6f4700;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-  }
+    .finish-order:hover {
+        background-color: #540d6eff;
+        color: #b59da4ff;
+        cursor: pointer;
+        box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+        border: none;
+      }
+      .finish-order:active {
+        background-color: #540d6eff;
+        color: #b59da4ff;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        transform: translateY(2px);
+      }
     @media (max-width: 768px) {
       .order-summary {
         width: 100%;

@@ -9,9 +9,10 @@ export class ShoppingCart extends LitElement {
     css`
       :host {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
         padding: 2rem;
         margin-bottom: 2.5rem;
+        color:#69ddffff;
       }
 
       @media (max-width: 768px) {

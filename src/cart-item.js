@@ -6,11 +6,11 @@ export class CartItem extends LitElement {
       display: flex;
       gap: 6rem;
       padding: 1rem;
-      border: 1px dashed #9f158f;
       margin-bottom: 1rem;
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
       transition: box-shadow 0.3s;
-      background: linear-gradient(to bottom right, #69ddffff, #a1d4ffff);
+      background-color: #4b3f72ff;
+      color:#69ddffff;
     }
 
     .card:hover {
@@ -29,19 +29,34 @@ export class CartItem extends LitElement {
       flex-direction: column;
       gap: 1rem;
       flex: 1;
+      font-family: 'Merriweather', serif;
+
     }
 
     .remove-btn {
-      background-color: red;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      width: 60%;
-      border-radius: 2rem;
-      margin-top: 2rem;
-      margin-bottom: 2rem;
+      background-color: #b59da4ff;
+        color: #4b3f72ff;
+        border: none;
+        padding: 0.2rem;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        height: 3rem;
+        transition: all 0.2s ease-in-out;
+        font-family: 'Martian Mono', monospace;
     }
+    .remove-btn:hover {
+        background-color: #540d6eff;
+        color: #b59da4ff;
+        cursor: pointer;
+        box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+        border: none;
+      }
+      .remove-btn:active {
+        background-color: #540d6eff;
+        color: #b59da4ff;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        transform: translateY(2px);
+      }
     .shoe-price {
       color: #9f158f;
     }
@@ -61,6 +76,7 @@ export class CartItem extends LitElement {
 
       .remove-btn {
         width: 50%;
+        font-size: 0.5rem;
       }
     }
   `;

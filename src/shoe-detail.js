@@ -27,6 +27,7 @@ class ShoeDetail extends LitElement {
         border-radius: 0.5rem;
         outline: none;
         transition: all 0.2s ease-in-out;
+        font-family: 'Martian Mono', monospace;
       }
 
       .shoe-size-selector:hover {
@@ -79,6 +80,7 @@ class ShoeDetail extends LitElement {
         align-items: center;
         gap: 1rem;
         background-color: #4b3f72ff;
+        font-family: 'Merriweather', serif;
       }
 
       /* Estilos para el nombre de la categoría */
@@ -100,6 +102,7 @@ class ShoeDetail extends LitElement {
         font-size: 1rem;
         height: 3rem;
         transition: all 0.2s ease-in-out;
+        font-family: 'Martian Mono', monospace;
       }
       .addcart-btn:hover {
         background-color: #540d6eff;
