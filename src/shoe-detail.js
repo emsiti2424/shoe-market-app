@@ -21,6 +21,27 @@ class ShoeDetail extends LitElement {
         height: 50%;
         font-size: 1rem;
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        background-color: #b59da4ff;
+        color: #4b3f72ff;
+        border: none;
+        border-radius: 0.5rem;
+        outline: none;
+        transition: all 0.2s ease-in-out;
+      }
+
+      .shoe-size-selector:hover {
+        cursor: pointer;
+        background-color: #4b3f72ff;
+        color: #b59da4ff;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      .shoe-size-selector:focus {
+        background-color: #4b3f72ff;
+        color: #b59da4ff;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        border: none;
+        outline: none;
       }
 
       /* Estilos para la disposición de los detalles del zapato */
