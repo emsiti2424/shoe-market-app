@@ -15,10 +15,7 @@ export class CartItem extends LitElement {
       color:#69ddffff;
     }
 
-    .card:hover {
-      box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
-      transform: translateY(-2px);
-    }
+   
     .card:hover {
       box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.2);
     }
