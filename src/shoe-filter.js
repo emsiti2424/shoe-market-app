@@ -14,6 +14,7 @@ export class ShoeFilter extends LitElement {
       color: #540d6eff;
       font-size: 1.2rem;
       min-height: 90%;
+      font-family: 'Montserrat', sans-serif;
     }
     .size-button {
       padding: 0.5rem;
@@ -132,7 +133,6 @@ export class ShoeFilter extends LitElement {
   render() {
     return html`
       <div class="filter-section">
-        <h2>Filter</h2>
         <div class="filter-item">
           <label>Category:</label>
           <ul id="category">

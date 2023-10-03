@@ -29,10 +29,10 @@ export class ShoeMarketApp extends router(LitElement) {
       }
       .header-title {
         color: #540d6eff;
-        text-shadow: 2px 2px 5px rgba(255, 159, 28, 1);
+        text-shadow: 1px 1px 1px rgba(255, 159, 28, 1);
         font-size: 2rem;
         font-weight: 1200;
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'Young Serif', serif;
       }
 
       nav {
@@ -282,11 +282,9 @@ export class ShoeMarketApp extends router(LitElement) {
 
   handleRemoveFromCart(e) {
     const productToRemove = e.detail;
-    console.log('productToRemove', productToRemove);
-
     if (!productToRemove || !productToRemove.shoe) {
-        console.error("Invalid productToRemove format:", e);
-        return;
+      console.error('Invalid productToRemove format:', e);
+      return;
     }
 
     // Encuentra el índice del producto que coincide con el ID y la talla
@@ -304,10 +302,7 @@ export class ShoeMarketApp extends router(LitElement) {
       updatedCart.splice(productIndex, 1);
       this.cart = updatedCart;
     }
-}
-
-
-
+  }
 
   router(route, params, query, data) {
     this.route = route;

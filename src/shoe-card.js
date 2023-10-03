@@ -48,6 +48,7 @@ export class ShoeCard extends LitElement {
       align-items: center;
       justify-content: space-around;
       gap: 1rem;
+      font-family: 'Martian Mono', monospace;
 
     }
 
