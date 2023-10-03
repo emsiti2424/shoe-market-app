@@ -34,9 +34,43 @@ export class ShoeMarketApp extends router(LitElement) {
         font-weight: 1200;
         font-family: 'Young Serif', serif;
         -webkit-text-stroke: 0.5px #ff9f1cff;
-
-
       }
+      .title-img {
+        border-radius: 50%;
+        width: 10rem;
+        height: 10rem;
+        margin-bottom: 0;
+        animation: rotate 200s linear infinite, shadow 1s ease-in-out infinite;
+        transition: all 200s ease-in-out;
+        transform-origin: center center;
+        border: 5px solid #540d6eff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: scale(1) rotateZ(0deg);
+        }
+        50% {
+          transform: scale(1.2) rotateZ(180deg);
+        }
+        100% {
+          transform: scale(1) rotateZ(360deg);
+        }
+      }
+
+      @keyframes shadow {
+        0% {
+          box-shadow: 0 0 7px #540d6eff;
+        }
+        50% {
+          box-shadow: 0 0 7px #540d6eff, 0 0 4px #540d6eff;
+        }
+        100% {
+          box-shadow: 0 0 7px #540d6eff;
+        }
+      }
+
 
       nav {
         position: relative;
@@ -55,9 +89,6 @@ export class ShoeMarketApp extends router(LitElement) {
         position: relative;
         display: table-cell;
         text-align: center;
-        color: #949494;
-        text-decoration: none;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
         font-weight: bold;
         transition: 0.2s ease color;
 
@@ -143,25 +174,7 @@ export class ShoeMarketApp extends router(LitElement) {
         height: 3rem;
         margin: 0.7rem;
       }
-      .title-img {
-        border-radius: 50%;
-        box-shadow: 0 0 60px rgba(255, 159, 28, 0.6);
-        width: 10rem;
-        height: 10rem;
-        margin-bottom: 0;
-        animation: rotate 25s linear infinite;
-        transition: all 0.3s ease-in-out;
-        transform-origin: center center;
-      }
 
-      @keyframes rotate {
-        0% {
-          transform: rotateZ(0deg);
-        }
-        100% {
-          transform: rotateZ(360deg);
-        }
-      }
 
       .title {
         font-size: 3rem;

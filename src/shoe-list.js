@@ -24,7 +24,6 @@ export class ShoeList extends navigator(LitElement) {
     @media only screen and (max-width: 1000px) {
       .grid-container {
         grid-template-columns: repeat(2, 1fr);
-
       }
     }
 
