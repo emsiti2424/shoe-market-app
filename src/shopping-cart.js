@@ -13,6 +13,7 @@ export class ShoppingCart extends LitElement {
         padding: 2rem;
         margin-bottom: 2.5rem;
         color:#69ddffff;
+        font-family: 'Martian Mono', monospace;
       }
 
       @media (max-width: 768px) {
