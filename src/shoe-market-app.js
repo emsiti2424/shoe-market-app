@@ -141,16 +141,37 @@ export class ShoeMarketApp extends router(LitElement) {
         margin: 0.7rem;
       }
       .title-img {
-        border-radius: 70%;
-        border: 3px solid #ff9f1cff;
-        box-shadow: 0 0 15px rgba(255, 159, 28, 0.6);
+        border-radius: 50%;
+        border: 2px solid #ff9f1cff;
+        box-shadow: 0 0 40px rgba(255, 159, 28, 0.6);
         width: 10rem;
         height: 10rem;
         margin-bottom: 0;
-        transition: transform 0.3s ease;
-        transform-style: preserve-3d;
-        will-change: transform;
+        animation: rotate 25s linear infinite;
+        transition: all 0.3s ease-in-out;
+        transform-origin: center center;
       }
+
+   
+
+      @keyframes rotate {
+        0% {
+          transform: rotateZ(0deg);
+        }
+        100% {
+          transform: rotateZ(360deg);
+        }
+      }
+
+      .title {
+        font-size: 3rem;
+        font-weight: bold;
+        margin-top: 2rem;
+        text-align: center;
+        color: #4b3f72ff;
+        text-shadow: 2px 2px #ff9f1cff;
+      }
+
 
       .header-center {
         display: flex;
