@@ -17,12 +17,14 @@ export class ShoeList extends navigator(LitElement) {
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
       padding: 20px;
+      margin-bottom: 2.5rem;
     }
 
     /* Responsive Styles */
     @media only screen and (max-width: 1000px) {
       .grid-container {
         grid-template-columns: repeat(2, 1fr);
+
       }
     }
 

@@ -2,6 +2,7 @@ import { LitElement, html, css } from 'lit-element';
 
 export class ShoeFilter extends LitElement {
   static styles = css`
+  
     .filter-section {
       flex-basis: 25%;
       padding: 20px;
