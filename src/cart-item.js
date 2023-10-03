@@ -7,7 +7,6 @@ export class CartItem extends LitElement {
       gap: 6rem;
       padding: 1rem;
       margin-bottom: 1rem;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
       transition: box-shadow 0.3s;
       border-radius: 20px;
       background-color: rgba(255, 255, 255, 0.45);
