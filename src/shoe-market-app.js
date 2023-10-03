@@ -42,20 +42,20 @@ export class ShoeMarketApp extends router(LitElement) {
         margin-bottom: 0;
         animation: rotate 200s linear infinite, shadow 1s ease-in-out infinite;
         transition: all 200s ease-in-out;
-        transform-origin: center center;
+
         border: 5px solid #540d6eff;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       }
 
       @keyframes rotate {
         0% {
-          transform: scale(1) rotateZ(0deg);
+          transform:  rotateZ(0deg);
         }
         50% {
-          transform: scale(1.2) rotateZ(180deg);
+          transform:  rotateZ(180deg);
         }
         100% {
-          transform: scale(1) rotateZ(360deg);
+          transform:  rotateZ(360deg);
         }
       }
 
