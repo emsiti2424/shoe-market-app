@@ -7,13 +7,21 @@ import { router } from 'lit-element-router';
 import './app-link.js';
 import './app-main.js';
 
+import './background.js';
 export class ShoeMarketApp extends router(LitElement) {
   static get styles() {
     return css`
       :host {
         display: block;
       }
-
+      my-three-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
       body {
         margin: 0;
         overflow: hidden;
@@ -344,6 +352,7 @@ export class ShoeMarketApp extends router(LitElement) {
 
   render() {
     return html`
+    <my-three-bg></my-three-bg>
       <header>
         <div class="header-center">
           <img class="title-img" src="../assets//header-img.jpg" alt="Logo" />
