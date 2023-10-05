@@ -91,7 +91,7 @@ export class MyThreeBg extends LitElement {
 
     this.camera.position.z = 100;
 
-    for (let i = 0; i < 500; i++) {
+    for (let i = 0; i < 80; i++) {
       this.spawnParticle();
     }
 
