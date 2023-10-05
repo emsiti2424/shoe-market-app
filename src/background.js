@@ -80,7 +80,7 @@ const particleMaterial = new THREE.PointsMaterial({
 
     const particleGeom = new THREE.BufferGeometry();
     const particleVertices = [];
-    for (let i = 0; i < 80; i++) {
+    for (let i = 0; i < 50; i++) {
       this.spawnParticle();
       particleVertices.push(
         this.particles[i].position.x,
