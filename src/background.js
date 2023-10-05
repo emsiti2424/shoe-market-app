@@ -89,7 +89,7 @@ export class MyThreeBg extends LitElement {
         for (let i = 0; i < this.particles.length; i++) {
             for (let j = i + 1; j < this.particles.length; j++) {
                 const distance = this.particles[i].position.distanceTo(this.particles[j].position);
-                if (distance < 40) {
+                if (distance < 50) {
                     const midpoint = new THREE.Vector3();
                     midpoint.addVectors(this.particles[i].position, this.particles[j].position).multiplyScalar(0.5);
 
