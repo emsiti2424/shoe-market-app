@@ -4,9 +4,9 @@ import * as THREE from 'three';
 class Particle {
   constructor() {
     this.position = new THREE.Vector3(
-      Math.random() * 200 - 100,
-      Math.random() * 200 - 100,
-      Math.random() * 200 - 100
+      Math.random() * 200 - 50,
+      Math.random() * 200 - 50,
+      Math.random() * 200 - 50
     );
 
     this.velocity = new THREE.Vector3(
@@ -18,11 +18,11 @@ class Particle {
 
   update() {
     this.position.add(this.velocity);
-    if (this.position.x > 100 || this.position.x < -100)
+    if (this.position.x > 50 || this.position.x < -50)
       this.velocity.x = -this.velocity.x;
-    if (this.position.y > 100 || this.position.y < -100)
+    if (this.position.y > 50 || this.position.y < -50)
       this.velocity.y = -this.velocity.y;
-    if (this.position.z > 100 || this.position.z < -100)
+    if (this.position.z > 50 || this.position.z < -50)
       this.velocity.z = -this.velocity.z;
   }
 }
@@ -63,20 +63,19 @@ export class MyThreeBg extends LitElement {
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.shadowRoot.appendChild(this.renderer.domElement);
     this.scene.background = new THREE.Color(0x540d6e);
-    this.camera.position.z = 100;
+    this.camera.position.z = 50;
 
+    const textureLoader = new THREE.TextureLoader();
+    const particleTexture = textureLoader.load('../assets/open-wc-logo.svg');
 
-const textureLoader = new THREE.TextureLoader();
-const particleTexture = textureLoader.load('../assets/open-wc-logo.svg');
-
-const particleMaterial = new THREE.PointsMaterial({
-    size: 5,
-    map: particleTexture,
-    transparent: true,
-    blending: THREE.AdditiveBlending,
-    depthWrite: false,
-    sizeAttenuation: true
-});
+    const particleMaterial = new THREE.PointsMaterial({
+      size: 5,
+      map: particleTexture,
+      transparent: true,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+      sizeAttenuation: true,
+    });
 
     const particleGeom = new THREE.BufferGeometry();
     const particleVertices = [];
@@ -127,8 +126,8 @@ const particleMaterial = new THREE.PointsMaterial({
         }
       }
       this.renderer.render(this.scene, this.camera);
-      this.camera.position.x = 100 * Math.sin(Date.now() * 0.0001);
-      this.camera.position.z = 100 * Math.cos(Date.now() * 0.0001);
+      this.camera.position.x = 50 * Math.sin(Date.now() * 0.0001);
+      this.camera.position.z = 50 * Math.cos(Date.now() * 0.0001);
       this.camera.lookAt(0, 0, 0);
     };
 
