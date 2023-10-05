@@ -10,7 +10,7 @@ class Particle {
     );
 
     this.velocity = new THREE.Vector3(
-      (Math.random() - 0.5) * 0.5,  // Making the movement slower
+      (Math.random() - 0.5) * 0.5, // Making the movement slower
       (Math.random() - 0.5) * 0.5,
       (Math.random() - 0.5) * 0.5
     );
@@ -67,44 +67,55 @@ export class MyThreeBg extends LitElement {
 
     const textureLoader = new THREE.TextureLoader();
     const particleTexture = textureLoader.load('../assets/open-wc-logo.svg');
-    const spriteMaterial = new THREE.SpriteMaterial({ map: particleTexture, blending: THREE.AdditiveBlending, transparent: true });
+    const spriteMaterial = new THREE.SpriteMaterial({
+      map: particleTexture,
+      blending: THREE.AdditiveBlending,
+      transparent: true,
+    });
 
     for (let i = 0; i < 20; i++) {
       this.spawnParticle();
     }
 
     const animate = () => {
-        requestAnimationFrame(animate);
-        this.particles.forEach(particle => {
-            particle.update();
-        });
+      requestAnimationFrame(animate);
+      this.particles.forEach(particle => {
+        particle.update();
+      });
 
-        // Remove old sprites (connections) from the scene
-        this.scene.children.forEach(child => {
-            if (child instanceof THREE.Sprite) {
-                this.scene.remove(child);
-            }
-        });
-
-        for (let i = 0; i < this.particles.length; i++) {
-            for (let j = i + 1; j < this.particles.length; j++) {
-                const distance = this.particles[i].position.distanceTo(this.particles[j].position);
-                if (distance < 50) {
-                    const midpoint = new THREE.Vector3();
-                    midpoint.addVectors(this.particles[i].position, this.particles[j].position).multiplyScalar(0.5);
-
-                    const sprite = new THREE.Sprite(spriteMaterial);
-                    sprite.position.set(midpoint.x, midpoint.y, midpoint.z);
-                    sprite.scale.set(distance, distance, 1); // scale it based on distance, so it fills the gap between particles
-                    this.scene.add(sprite);
-                }
-            }
+      // Remove old sprites (connections) from the scene
+      this.scene.children.forEach(child => {
+        if (child instanceof THREE.Sprite) {
+          this.scene.remove(child);
         }
+      });
 
-        this.renderer.render(this.scene, this.camera);
-        this.camera.position.x = 100 * Math.sin(Date.now() * 0.00005); // Making camera movement slower and more attractive
-        this.camera.position.z = 100 * Math.cos(Date.now() * 0.00005);
-        this.camera.lookAt(0, 0, 0);
+      for (let i = 0; i < this.particles.length; i++) {
+        for (let j = i + 1; j < this.particles.length; j++) {
+          const distance = this.particles[i].position.distanceTo(
+            this.particles[j].position
+          );
+          if (distance < 50) {
+            const midpoint = new THREE.Vector3();
+            midpoint
+              .addVectors(
+                this.particles[i].position,
+                this.particles[j].position
+              )
+              .multiplyScalar(0.5);
+
+            const sprite = new THREE.Sprite(spriteMaterial);
+            sprite.position.set(midpoint.x, midpoint.y, midpoint.z);
+            sprite.scale.set(distance, distance, 1); // scale it based on distance, so it fills the gap between particles
+            this.scene.add(sprite);
+          }
+        }
+      }
+
+      this.renderer.render(this.scene, this.camera);
+      this.camera.position.x = 100 * Math.sin(Date.now() * 0.00005); // Making camera movement slower and more attractive
+      this.camera.position.z = 100 * Math.cos(Date.now() * 0.00005);
+      this.camera.lookAt(0, 0, 0);
     };
 
     animate();
